@@ -13,6 +13,15 @@
 #include "TurnOffAllLights.h"
 using namespace std;
 
+class TestCommand : public Command
+{
+    public:
+    void execute() override
+    {
+        cout << "TestCommand executed." << endl;
+    }
+};
+
 int main()
 {
     Light livingRoomLight;
@@ -70,6 +79,13 @@ int main()
         deviceCount->getStatus();
     }
 
+    thermostat.toggleOn();
+    thermostat.toggleOff();
+    thermostat.toggle();
+    thermostat.getStatus();
+    thermostat.performAction("ToogleOff");
+    thermostat.getDeviceType();
+
     // Test Macro Command to turn off all lights
     cout << "\nTesting MacroRoutine to Turn Off All Lights" << endl;
     TurnOffAllLights execute;
@@ -78,6 +94,13 @@ int main()
 
     cout << "Living Room Light Status after Macro: " << livingRoomLight.getStatus()  << endl;
     cout << "Kitchen Light Status after Macro: " << kitchenLight.getStatus() << endl;
+
+
+    Command* testCommand = new TestCommand();
+    routine.addProcedure(testCommand);
+    routine.removeProcedure();
+
+   // delete testCommand;
 
     // Test Observer pattern with sensors and alarms
     cout << "\nTesting Sensor and Alarm (Observer pattern)" << endl;
