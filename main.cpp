@@ -32,6 +32,7 @@ int main()
     livingRoomLight.toggleOff();
     cout << "Living Room Light Status: " << livingRoomLight.getStatus() << endl;
     
+    kitchenLight.toggle();
 
     kitchenLight.toggleOn();
     cout << "Kitchen Light Status: " << kitchenLight.getStatus() << endl;
@@ -41,6 +42,14 @@ int main()
 
     frontDoorLock.unlock();
     cout << "Front Door Lock Status: " << frontDoorLock.getStatus()  << endl;
+
+    frontDoorLock.toggleOff();
+    frontDoorLock.getStatus();
+    frontDoorLock.performAction("ToggleOn");
+    frontDoorLock.getDeviceType();
+    frontDoorLock.lock();
+    frontDoorLock.unlock();
+
 
     // Test Thermostat
     cout << "\nTesting Thermostat" << endl;
