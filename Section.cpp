@@ -7,10 +7,7 @@ Section::Section(const string& sectionName)
 
 Section::~Section()
 {
-    for(auto roomsCount : rooms)
-    {
-        delete roomsCount;
-    }
+    
 }
 
 string Section::getName() const
