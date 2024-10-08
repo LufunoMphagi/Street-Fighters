@@ -78,7 +78,7 @@ void Thermostat::performAction(const string& action)
 
 string Thermostat::getDeviceType() const
 {
-    return "Thermostat";
+    return "Smart Thermostat";
 }
 
 void Thermostat::setTemperature(double temp)
