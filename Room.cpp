@@ -7,10 +7,6 @@ Room::Room(const string& roomName)
 
 Room::~Room()
 {
-    for(auto deviceCount : devices)
-    {
-        delete deviceCount;
-    }
 }
 
 string Room::getName() const
